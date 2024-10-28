@@ -20,6 +20,18 @@ public class MAIN {
         System.out.println("Eliminando el jugador 5 "); 
         Jugadores.QuitarJugador(); //Eliminamos al jugador 
         Jugadores.MostrarJugadores(); //Mostramos los jugadors 
+
+        Cola cola = new Cola();
+        
+        cola.encolarPartida("Partida 1");
+        cola.encolarPartida("Partida 2");
+        cola.encolarPartida("Partida 3");
+        cola.encolarPartida("Partida 4");
+        cola.encolarPartida("Partida 5");
+        
+        System.out.println("Partida en curso");
+        NodoCola partidaEnComienzo = cola.partidaEnProgreso();
+        System.out.print(partidaEnComienzo.toString());
     }
 
 }
