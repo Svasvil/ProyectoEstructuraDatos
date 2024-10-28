@@ -3,7 +3,7 @@ public class Jugador_Datos {
     private String Nombre; //Creamos los atributos
     private String  ID; //Creamos los atributos
 
-    public Jugador_Datos(String dato) { //Creamos el constructor Vacio 
+    public Jugador_Datos(String dato) { //Creamos el constructor vacío 
         this.ID = ""; 
         this.Nombre = "";
        }
@@ -12,7 +12,7 @@ public class Jugador_Datos {
         this.Nombre = Nombre;
         this.ID = ID;
     }
- //Creamos los setters y getters 
+    //Creamos los métodos getters y setters  
     public String getID() {
         return ID;
     }
