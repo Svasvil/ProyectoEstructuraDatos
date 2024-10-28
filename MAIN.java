@@ -10,7 +10,7 @@ public class MAIN {
         //Pila
         Pila Jugadores = new Pila(); //Creamos el objeto  en la clase Pila 
         //Agregamos jugadores a la pila 
-        Jugadores.AgregarJugador(" Jugador  1", "   1"); 
+        Jugadores.AgregarJugador("Jugador   1", "   1 "); 
         Jugadores.AgregarJugador("Jugador   2", "   2 ");
         Jugadores.AgregarJugador("Jugador   3", "   3 "); 
         Jugadores.AgregarJugador("Jugador   4", "   4 "); 
