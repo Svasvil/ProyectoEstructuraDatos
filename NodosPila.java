@@ -1,16 +1,16 @@
 package jugadores;
 public class NodosPila {
     
-    private Jugador_Datos jugador;    //Creamos los atributos
+    private Jugador_Datos jugador; //Creamos los atributos
     private NodosPila siguiente; //Creamos los atributos  
     public NodosPila() {
-        this.siguiente = null; //Creamos un constructor vacio 
+        this.siguiente = null; //Creamos un constructor vacío 
     }
     public NodosPila(Jugador_Datos jugador, NodosPila siguiente) { //Creamos un constructor 
         this.jugador = jugador;
         this.siguiente = siguiente;
     }
-//Creamos los sets and gets 
+    //Creamos los métodos getters y setters  
     public Jugador_Datos getJugador() { 
         return jugador;
     }
