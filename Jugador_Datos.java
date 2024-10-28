@@ -12,7 +12,7 @@ public class Jugador_Datos {
         this.Nombre = Nombre;
         this.ID = ID;
     }
- //Creamos los sets and gets 
+ //Creamos los setters y getters 
     public String getID() {
         return ID;
     }
