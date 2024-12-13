@@ -1,17 +1,15 @@
 public class ListaDobleEnlazada {
-    private NodoLDE cabeza;  // Cabeza de la lista
-    private NodoLDE cola;    // Cola de la lista
+    private NodoLDE cabeza;
+    private NodoLDE cola;
 
     public ListaDobleEnlazada() {
         this.cabeza = null;
         this.cola = null;
     }
 
-    // Método para agregar un jugador en el ranking, manteniendo el orden por puntuación
     public void agregarJugador(DatosJugador jugador) {
         NodoLDE nuevoNodo = new NodoLDE(jugador);
         
-        // Si la lista está vacía, simplemente agregamos el nodo
         if (cabeza == null) {
             cabeza = nuevoNodo;
             cola = nuevoNodo;
@@ -23,15 +21,15 @@ public class ListaDobleEnlazada {
                 actual = actual.getSiguiente();
             }
             
-            if (actual == null) { // Si llegamos al final de la lista
+            if (actual == null) { 
                 cola.setSiguiente(nuevoNodo);
                 nuevoNodo.setAnterior(cola);
                 cola = nuevoNodo;
-            } else if (actual == cabeza) { // Si el jugador tiene la mayor puntuación
+            } else if (actual == cabeza) { 
                 nuevoNodo.setSiguiente(cabeza);
                 cabeza.setAnterior(nuevoNodo);
                 cabeza = nuevoNodo;
-            } else { // Insertar en el medio
+            } else { 
                 NodoLDE anterior = actual.getAnterior();
                 anterior.setSiguiente(nuevoNodo);
                 nuevoNodo.setAnterior(anterior);
@@ -41,16 +39,13 @@ public class ListaDobleEnlazada {
         }
     }
 
-    // Método para eliminar un jugador del ranking
     public void eliminarJugador(String id) {
         NodoLDE actual = cabeza;
         
-        // Buscamos el jugador por ID
         while (actual != null && !actual.getJugador().getID().equals(id)) {
             actual = actual.getSiguiente();
         }
 
-        // Si encontramos el jugador, lo eliminamos
         if (actual != null) {
             if (actual == cabeza) {
                 cabeza = actual.getSiguiente();
@@ -73,7 +68,6 @@ public class ListaDobleEnlazada {
         }
     }
 
-    // Método para mostrar el ranking
     public void mostrarRanking() {
         NodoLDE actual = cabeza;
         while (actual != null) {
