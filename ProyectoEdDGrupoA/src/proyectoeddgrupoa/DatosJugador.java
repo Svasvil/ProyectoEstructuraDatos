@@ -9,38 +9,39 @@ package proyectoeddgrupoa;
  * @author Andy
  */
 public class DatosJugador {
-    private String Nombre; //Creamos los atributos
-    private String  ID; //Creamos los atributos
+    private String ID;
+    private String nombre;
+    private int puntuacion;
 
-    public DatosJugador(String dato) { //Creamos el constructor vacío 
-        this.ID = ""; 
-        this.Nombre = "";
-       }
-
-    public DatosJugador(String Nombre, String ID) {   //Creamos el constructor 
-        this.Nombre = Nombre;
+    public DatosJugador(String ID, String nombre, int puntuacion) {
         this.ID = ID;
+        this.nombre = nombre;
+        this.puntuacion = puntuacion;
     }
-    //Creamos los métodos getters y setters  
+
+    // Getters y setters
     public String getID() {
         return ID;
     }
- 
+
     public void setID(String ID) {
         this.ID = ID;
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
-    }   
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-    @Override
-    public String toString() {
-        return Nombre;
+    public int getPuntuacion() {
+        return puntuacion;
+    }
+
+    public void setPuntuacion(int puntuacion) {
+        this.puntuacion = puntuacion;
     }
     
 }
