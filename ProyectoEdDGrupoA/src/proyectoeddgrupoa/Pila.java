@@ -9,9 +9,9 @@ package proyectoeddgrupoa;
  * @author Andy
  */
 public class Pila {
-     private NodosPila cima; //Creamos el atributo 
+    private NodosPila cima;  // Creamos el atributo
 
-    public Pila() { //Creamos el constructor vacío 
+    public Pila() {
         this.cima = null;
     }
 
@@ -22,39 +22,51 @@ public class Pila {
     public void setCima(NodosPila cima) {
         this.cima = cima;
     }
-    
-    
-    //Creamos el método para agregar el jugador 
-    public void AgregarJugador(String id, String nombre) {
-        NodosPila jugador = new NodosPila(); //Creamos un nuevo nodo para el jugador 
-        jugador.setJugador(new DatosJugador(id, nombre));
-        if (this.cima == null) { //Si la pila está vacía el nuevo jugador es la cima 
+
+    // Método para agregar un jugador
+    public void AgregarJugador(String id, String nombre, int puntuacion) {
+        NodosPila jugador = new NodosPila();
+        jugador.setJugador(new DatosJugador(id, nombre, puntuacion));
+        if (this.cima == null) {
             this.cima = jugador;
         } else {
             jugador.setSiguiente(this.cima);
-            this.cima = jugador; //Actualizamos la cima 
+            this.cima = jugador;  // Actualizamos la cima
         }
     }
-    //Creamos el metodo de quitar jugador 
-    public void QuitarJugador() {
-        if (this.cima != null) { //Verificamos que la pila no esté  vacía 
-            NodosPila jugadorEliminado = this.cima;
-            this.cima = this.cima.getSiguiente(); //Actualizamos la cima a el siguiente jugador 
-            jugadorEliminado.setSiguiente(null); //Quitamos el nodo eliminado 
-        }
-    }
-    //Creamos el metodo de mostrar jugadores 
-    public void MostrarJugadores() {
-        String z = ""; //Iniciamos una cadena para mostrar los jugadores 
 
+    // Método para quitar un jugador
+    public void QuitarJugador() {
         if (this.cima != null) {
-            NodosPila aux = this.cima; //Usamos un nodo auxiliar para recorrer la pila 
+            NodosPila jugadorEliminado = this.cima;
+            this.cima = this.cima.getSiguiente();  // Actualizamos la cima
+            jugadorEliminado.setSiguiente(null);  // Quitamos el nodo eliminado
+        }
+    }
+
+    // Método para mostrar jugadores
+    public void MostrarJugadores() {
+        String z = "";
+        if (this.cima != null) {
+            NodosPila aux = this.cima;
             while (aux != null) {
-                z += "ID: " + aux.getJugador().getID() + ", Nombre: " + aux.getJugador().getNombre() + "\n"; //Agregamos los atributos del jugador 
+                z += "ID: " + aux.getJugador().getID() + ", Nombre: " + aux.getJugador().getNombre() + ", Puntuación: " + aux.getJugador().getPuntuacion() + "\n";
                 aux = aux.getSiguiente();
             }
         }
-        System.out.println(z); //Mostramos la información completa 
-    } 
+        System.out.println(z);
+    }
+
+    // Método para transferir jugadores de la pila al ranking
+    public void transferirJugadoresARanking(ListaDobleEnlazada ranking) {
+        NodosPila aux = this.cima;
+        
+        // Transferir jugadores de la pila al ranking
+        while (aux != null) {
+            ranking.agregarJugador(aux.getJugador()); // Agregar jugador al ranking
+            aux = aux.getSiguiente(); // Avanzar al siguiente jugador en la pila
+        }
+    }
 }
+
 
