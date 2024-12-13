@@ -4,14 +4,15 @@ public class ProyectoEdDGrupoA {
 
     public static void main(String[] args) {
         //Instanciamiento, utilizacion y llamado de métodos de Pila
-        Pila jugadores = new Pila(); //Creamos el objeto en la clase Pila 
+        Pila jugadores = new Pila(); //Creamos el objeto en la clase Pila
+        ListaDobleEnlazada ranking = new ListaDobleEnlazada();
 
         //Agregamos jugadores a la pila 
-        jugadores.AgregarJugador("svasquez", " 1 ");
-        jugadores.AgregarJugador("jgodinez ", " 2 ");
-        jugadores.AgregarJugador("sorozco ", " 3 ");
-        jugadores.AgregarJugador("ahidalgo ", " 4 ");
-         jugadores.AgregarJugador("Jugador Eliminado ", " 5");
+        jugadores.AgregarJugador("1", "svasquez", 1400);
+        jugadores.AgregarJugador("2", "jgodinez ", 1200);
+        jugadores.AgregarJugador("3", "sorozco ", 2100);
+        jugadores.AgregarJugador("4", "ahidalgo ", 1850);
+        jugadores.AgregarJugador("5", "mvinicio", 2400);
     
         jugadores.MostrarJugadores(); //Imprimimos los jugadores 
 
@@ -21,6 +22,11 @@ public class ProyectoEdDGrupoA {
         System.out.println("");
         System.out.println("Mostrando los jugadores restantes:");
         jugadores.MostrarJugadores(); //Mostramos los jugadores 
+
+        jugadores.transferirJugadoresARanking(ranking);
+
+        System.out.println("\nRanking de jugadores:");
+        ranking.mostrarRanking();
 
         //Instanciamiento, utilizacion y llamado de métodos de Cola 
         Cola cola = new Cola(); //Creamos el objeto en la clase Cola 
