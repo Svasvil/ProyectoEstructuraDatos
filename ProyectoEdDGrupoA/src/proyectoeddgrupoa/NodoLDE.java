@@ -1,3 +1,4 @@
+package proyectoeddgrupoa;
 public class NodoLDE {
     private DatosJugador jugador;
     private NodoLDE anterior;
