@@ -1,3 +1,5 @@
+package proyectoeddgrupoa;
+
 public class ListaDobleEnlazada {
     private NodoLDE cabeza;
     private NodoLDE cola;
