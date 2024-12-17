@@ -49,6 +49,7 @@ public class ProyectoEdDGrupoA {
         System.out.println("Siguientes partidas");
         cola.imprimirCola();
 
+        //Instanciamiento, utilización y llamado de metodos de Lista Simple
         EstructuraListaSimple listaSimple = new EstructuraListaSimple();
         listaSimple.AgregarJugador(new Jugadores(1, "sorozco", "Equipo1"));
         listaSimple.AgregarJugador(new Jugadores(2, "jgodinez ", "Equipo2"));
@@ -57,6 +58,7 @@ public class ProyectoEdDGrupoA {
 
         listaSimple.MostrarJugadores();
 
+        //Instanciamiento, utilización y llamado de metodos de Lista enlazada circular
         ListaEC partidas = new ListaEC();
         //Agregamos los datos a las partidas 
         partidas.insertarP(new Partida(1, "sorozco", 45));
@@ -69,7 +71,8 @@ public class ProyectoEdDGrupoA {
         //Mostramos los puntos obtenidos de cada jugador en la partida  
         System.out.print("Puntos obtenidos en la partida");
         System.out.println(partidas.toString());
-        
+
+        //Instanciamiento, utilización y llamado de metodos de arbol binario
         EstructuraArbol Arb1 = new EstructuraArbol();
         Arb1.inserta(45);
         Arb1.inserta(42);
